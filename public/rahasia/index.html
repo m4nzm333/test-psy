@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Test Psy</title>
+
+    <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+
+    <link rel="stylesheet" href="../assets/css/datatable/buttons.dataTables.min.css">
+
+    <link rel="stylesheet" href="../assets/css/datatable/dataTables.bootstrap4.min.css">
+</head>
+
+<body class="bg-dark">
+    <div class="container my-5">
+        <div class="row align-items-center h-100 my-5">
+            <div class="col-12">
+                <div id="root" class="text-light">
+                    <h1 class="text-center">Data Responden</h1>
+                    <p class="text-left">
+                        <button type="button" class="btn btn-danger btn-lg" data-toggle="modal"
+                            data-target="#modalHapus">
+                            Hapus Data
+                        </button>
+                    </p>
+                    <hr>
+                    <table id="tableResponden" class="table table-dark table-bordered" style="width:100%">
+                        <thead>
+                            <tr>
+                                <th>Nama</th>
+                                <th>Umur</th>
+                                <th>Divisi</th>
+                                <th>Jenis Kelamin</th>
+                                <th>AUT 1</th>
+                                <th>AUT 2</th>
+                                <th>AUT 3</th>
+                                <th>RAT 1</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="modalHapus" tabindex="-1" role="dialog" aria-labelledby="modalHapusLabel"aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalHapusLabel">Hapus Data</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    Ingin menghapus semua data?
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Kembali</button>
+                    <button type="button" class="btn btn-danger" id="btnHapus">Hapus</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="modalLoading" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-dialog-centered text-light" role="document">
+            <div class="container text-center">
+                Memuat Data
+                <br>
+                <br>
+                <div class="spinner-border text-light" role="status">
+                    <span class="sr-only">Loading...</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../assets/js/jquery-3.5.0.min.js"></script>
+    <script src="../assets/js/popper.min.js"></script>
+    <script src="../assets/js/bootstrap.min.js"></script>
+    <script src="../assets/js/firebase-app.js"></script>
+    <script src="../assets/js/firebase-firestore.js"></script>
+
+    <script src="../assets/js/datatable/jquery.dataTables.min.js"></script>
+    <script src="../assets/js/datatable/jquery.dataTables.min.js"></script>
+    <script src="../assets/js/datatable/dataTables.bootstrap4.min.js"></script>
+    <script src="../assets/js/datatable/dataTables.buttons.min.js"></script>
+    <script src="../assets/js/datatable/buttons.flash.min.js"></script>
+    <script src="../assets/js/datatable/jszip.min.js"></script>
+    <script src="../assets/js/datatable/pdfmake.min.js"></script>
+    <script src="../assets/js/datatable/vfs_fonts.js"></script>
+    <script src="../assets/js/datatable/buttons.html5.min.js"></script>
+    <script src="../assets/js/datatable/buttons.print.min.js"></script>
+
+    <script src="../assets/js/rahasia.js"></script>
+</body>
+
+</html>
