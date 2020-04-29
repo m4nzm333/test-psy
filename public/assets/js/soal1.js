@@ -108,7 +108,14 @@ const showSoal1 = async () => {
     
     for(var i = 0; i < soal1Manifest.length; i++){
         $("#soal1Title").html(soal1Manifest[i].title);
-        $("#soal1Img").attr('src', soal1Manifest[i].url)
+        // Mode 0
+        if(mode == 0){
+            $("#soal1Img").attr('src', soal1Manifest[i].url)
+        }
+        // Mode 1
+        if(mode == 1){
+            $("#soal1Img").attr('src', '../' + soal1Manifest[i].url) 
+        }
         $("#soal1Title").fadeIn(500);
         await sleep(2000)
         $("#soal1Title").fadeOut(10);

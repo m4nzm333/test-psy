@@ -72,7 +72,16 @@ const showLatihan1 = async () => {
     
     for(var i = 0; i < latihan1Manifest.length; i++){
         $("#latihan1Title").html(latihan1Manifest[i].title);
-        $("#latihan1Img").attr('src', latihan1Manifest[i].url)
+
+        // Mode 0
+        if(mode == 0){
+            $("#latihan1Img").attr('src', latihan1Manifest[i].url)
+        }
+        // Mode 1
+        if(mode == 1){
+            $("#latihan1Img").attr('src', '../' + latihan1Manifest[i].url) 
+        }
+        
         $("#latihan1Title").fadeIn(500);
         await sleep(2000)
         $("#latihan1Title").fadeOut(10);

@@ -111,6 +111,7 @@ const showPetunjukPortal1 = () => {
     });
 }
 
+// Mode 0
 const showSelesaiPortal1 = async () => {
     $("#root").html(`<div id="selesaiPortal1" style="display:none">
         <p class="lead text-center my-5">Semua soal pada Alternate uses test sudah selesai dikerjakan.<br>Apabila anda sudah siap, kita akan berpindah ke Remote associates test. Silahkan klik tombol <strong>Saya Siap.</strong>
@@ -124,6 +125,22 @@ const showSelesaiPortal1 = async () => {
     $("#btnSiapPortal2").click(() => {
         $("#selesaiPortal1").fadeOut();
         showPetunjukPortal2();
+    });
+}
+// Mode 1
+const showSelesaiPortal1Alt = () => {
+    setProgress('portal1SelesaiAlt');
+    $("#root").html(`<div id="portal1Selesai" style="display:none">
+        <h3 class="text-center my-5">Semua soal pada Alternate uses test sudah selesai dikerjakan.</h3>
+        <h3 class="text-center my-5">Dengan demikian, rangkaian tes sudah selesai. Terima kasih atas partsipasi anda. <br> Semoga hari anda menyenangkan.
+        </h3>
+        <p class="text-center"><button class="btn btn-success btn-lg" id="btnPortal1Selesai">SELESAI</button></p>
+    </div>`)
+    $("#portal1Selesai").fadeIn();
+    $("#btnPortal1Selesai").click(() => {
+        $("#portal1Selesai").fadeOut();
+        clearAllLocalStorage();
+        showSelamatDatang();
     });
 }
 
@@ -164,6 +181,10 @@ if (getIdResponden() != null) {
         switch (getProgress()) {
             case 'portal1':
                 showPetunjukPortal1();
+                break;
+            
+            case 'portal1SelesaiAlt':
+                showSelesaiPortal1Alt();
                 break;
 
             // Latihan

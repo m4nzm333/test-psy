@@ -108,7 +108,14 @@ const showSoal3 = async () => {
     
     for(var i = 0; i < soal3Manifest.length; i++){
         $("#soal3Title").html(soal3Manifest[i].title);
-        $("#soal3Img").attr('src', soal3Manifest[i].url)
+        // Mode 0
+        if(mode == 0){
+            $("#soal3Img").attr('src', soal3Manifest[i].url)
+        }
+        // Mode 1
+        if(mode == 1){
+            $("#soal3Img").attr('src', '../' + soal3Manifest[i].url) 
+        }
         $("#soal3Title").fadeIn(500);
         await sleep(2000)
         $("#soal3Title").fadeOut(10);
@@ -176,6 +183,12 @@ const saveSoal3Jawaban = async () => {
     }, {merge : true})
     .then(() => {
         $("#quizSoal3").fadeOut(500);
-        showSelesaiPortal1();
+
+        if(mode == 0){
+            showSelesaiPortal1();
+        } else {
+            showSelesaiPortal1Alt();
+        }
+        
     })
 }
