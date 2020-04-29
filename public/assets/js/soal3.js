@@ -134,7 +134,7 @@ const showSoal3Quiz = async () => {
     $('#root').html(`
     <div class="text-center" id="quizSoal3" style="display:none">
         <h2 class="lead">Sebutkan fungsi lain dari kancing <br>(selain digunakan untuk mengikat barang)</h2>
-        <img src="assets/img/aut/kancing.png" alt="Latihan 1 Soal" class="img-fluid" width="400px">
+        <img src="${loc}assets/img/aut/kancing.png" alt="Latihan 1 Soal" class="img-fluid" width="400px">
         <hr>
         <div class="row align-content-justify d-flex justify-content-center" >
             <div class="col-12 col-sm-12 col-md-6 ">

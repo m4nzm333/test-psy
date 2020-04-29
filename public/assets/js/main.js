@@ -30,3 +30,5 @@ const clearAllLocalStorage = () => {
     localStorage.removeItem("idResponden");
     localStorage.removeItem("progress");
 }
+
+var loc = mode == 1 ? '../' : ''

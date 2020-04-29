@@ -134,7 +134,7 @@ const showSoal2Quiz = async () => {
     $('#root').html(`
     <div class="text-center" id="quizSoal2" style="display:none">
         <h2 class="lead">Sebutkan fungsi lain dari PENSIL <br>(selain digunakan untuk menulis)</h2>
-        <img src="assets/img/aut/pensil.jpg" alt="Latihan 1 Soal" class="img-fluid" width="400px">
+        <img src="${loc}assets/img/aut/pensil.jpg" alt="Latihan 1 Soal" class="img-fluid" width="400px">
         <hr>
         <div class="row align-content-justify d-flex justify-content-center" >
             <div class="col-12 col-sm-12 col-md-6 ">

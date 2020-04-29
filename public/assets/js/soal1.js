@@ -114,8 +114,9 @@ const showSoal1 = async () => {
         }
         // Mode 1
         if(mode == 1){
-            $("#soal1Img").attr('src', '../' + soal1Manifest[i].url) 
+            $("#soal1Img").attr('src', '../../' + soal1Manifest[i].url) 
         }
+        
         $("#soal1Title").fadeIn(500);
         await sleep(2000)
         $("#soal1Title").fadeOut(10);
@@ -134,7 +135,7 @@ const showSoal1Quiz = async () => {
     $('#root').html(`
     <div class="text-center" id="quizSoal1" style="display:none">
         <h2 class="lead">Sebutkan fungsi lain dari SEPATU (selain sebagai alas/pelindung kaki) </h2>
-        <img src="assets/img/aut/sepatu.jpg" alt="Latihan 1 Soal" class="img-fluid">
+        <img src="${loc}assets/img/aut/sepatu.jpg" alt="Latihan 1 Soal" class="img-fluid">
         <hr>
         <div class="row align-content-justify d-flex justify-content-center" >
             <div class="col-12 col-sm-12 col-md-6 ">

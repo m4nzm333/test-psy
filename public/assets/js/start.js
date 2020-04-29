@@ -28,7 +28,6 @@ var idResponden = '';
 //     return data;
 // }
 
-
 const showSelamatDatang = async () => {
     $("#root").html(`<div id="selamatDatang" style="display:none">
         <p class="lead text-justify my-5"><strong>Selamat Datang!</strong> Untuk beberapa menit kedepan anda akan mengerjakan dua bentuk tes. Tes pertama bernama Alternate uses test dan tes kedua bernama Remote associates test. Setiap tes telah disediakan petunjuk yang akan membantu anda selama tes berlangsung. Sebelum memulai, silahkan duduk senyaman mungkin dan isilah biodata anda terlebih dahulu.</p>

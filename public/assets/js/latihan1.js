@@ -81,7 +81,6 @@ const showLatihan1 = async () => {
         if(mode == 1){
             $("#latihan1Img").attr('src', '../' + latihan1Manifest[i].url) 
         }
-        
         $("#latihan1Title").fadeIn(500);
         await sleep(2000)
         $("#latihan1Title").fadeOut(10);
@@ -100,7 +99,7 @@ const showLatihan1Quiz = async () => {
     $('#root').html(`
     <div class="text-center" id="quizLatihan1" style="display:none">
         <h2 class="lead">Sebutkan fungsi lain dari Paper clip (selain sebagai penjepit kertas)</h2>
-        <img src="assets/img/aut/paper clipt.png" alt="Latihan 1 Soal" class="img-fluid">
+        <img src="${loc}assets/img/aut/paper clipt.png" alt="Latihan 1 Soal" class="img-fluid">
         <hr>
         <div class="row align-content-justify d-flex justify-content-center" >
             <div class="col-12 col-sm-12 col-md-6 ">
