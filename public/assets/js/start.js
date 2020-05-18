@@ -33,7 +33,7 @@ const showSelamatDatang = async () => {
     if(mode == 0){
         petunjukSoalku = 'Untuk beberapa menit kedepan anda akan mengerjakan dua bentuk tes. Tes pertama bernama Alternated uses test dan tes kedua bernama Remote associates test. Setiap tes telah disediakan petunjuk yang akan membantu anda selama tes berlangsung. Sebelum memulai, silahkan duduk senyaman mungkin dan isilah biodata anda terlebih dahulu.';
     } else {
-        petunjukSoalku = 'Untuk beberapa menit kedepan anda akan mengerjakan senuah tes. Tes tersebut bernama Alternated uses test dan telah disediakan petunjuk yang akan membantu anda selama tes berlangsung. Sebelum memulai, silahkan duduk senyaman mungkin dan isilah biodata anda terlebih dahulu.';
+        petunjukSoalku = 'Untuk beberapa menit kedepan anda akan mengerjakan sebuah tes. Tes tersebut bernama Alternated uses test dan telah disediakan petunjuk yang akan membantu anda selama tes berlangsung. Sebelum memulai, silahkan duduk senyaman mungkin dan isilah biodata anda terlebih dahulu.';
     }
     $("#root").html(`<div id="selamatDatang" style="display:none">
         <p class="lead text-justify my-5"><strong>Selamat Datang!</strong> ${petunjukSoalku}</p>
