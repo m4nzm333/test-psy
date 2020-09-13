@@ -6,7 +6,7 @@ const showLatihan1Petunjuk = async () => {
     setProgress('latihan1Petunjuk');
     $("#root").html(`<div id="latihan1Petunjuk" style="display:none; margin-top:150px">
         <h1 class="text-center my-5">LATIHAN</h1>
-        <p class="lead">Dalam beberapa saat, tayangan gambar dan kata-kata akan dimulai. <strong>INGAT!!</strong> Tayangan ini akan membantu anda dalam mengerjakan setiap soal.</p>
+        <p class="lead">Dalam beberapa saat lagi, Soal dan Kolom jawaban akan ditayangkan.  <strong>INGAT!!</strong> Soal akan dibatasi oleh waktu sehingga kerjakan secepat dan setepat mungkin. Tuliskan Jawaban anda di kolom yang sudah disediakan.</p>
     </div>`);
 
     $("#latihan1Petunjuk").fadeIn();
@@ -64,33 +64,34 @@ const latihan1Manifest = [
 
 const showLatihan1 = async () => {
     setProgress('latihan1Gambar');
-    $("#root").html(
-        `<div class="text-center" id="latihan1Root">
-            <h1 id="latihan1Title" class="my-5" style="display:none; font-size: 60px; margin-top:150px !important"></h1>
-            <img src="" style="display:none; margin-top:20px !important" alt="Latihan1" id="latihan1Img" height="500px">
-        </div>`);
+    if(mode != 3){
+        $("#root").html(
+            `<div class="text-center" id="latihan1Root">
+                <h1 id="latihan1Title" class="my-5" style="display:none; font-size: 60px; margin-top:150px !important"></h1>
+                <img src="" style="display:none; margin-top:20px !important" alt="Latihan1" id="latihan1Img" height="500px">
+            </div>`);
+        
+        for(var i = 0; i < latihan1Manifest.length; i++){
+            $("#latihan1Title").html(latihan1Manifest[i].title);
     
-    for(var i = 0; i < latihan1Manifest.length; i++){
-        $("#latihan1Title").html(latihan1Manifest[i].title);
-
-        // Mode 0
-        if(mode == 0){
-            $("#latihan1Img").attr('src', latihan1Manifest[i].url)
+            // Mode 0
+            if(mode == 0){
+                $("#latihan1Img").attr('src', latihan1Manifest[i].url)
+            }
+            // Mode 1
+            if(mode == 1){
+                $("#latihan1Img").attr('src', '../' + latihan1Manifest[i].url) 
+            }
+            $("#latihan1Title").fadeIn(500);
+            await sleep(2000)
+            $("#latihan1Title").fadeOut(10);
+            await sleep(20)
+            $("#latihan1Img").fadeIn(500);
+            await sleep(2000)
+            $("#latihan1Img").fadeOut(10);
+            await sleep(20)
         }
-        // Mode 1
-        if(mode == 1){
-            $("#latihan1Img").attr('src', '../' + latihan1Manifest[i].url) 
-        }
-        $("#latihan1Title").fadeIn(500);
-        await sleep(2000)
-        $("#latihan1Title").fadeOut(10);
-        await sleep(20)
-        $("#latihan1Img").fadeIn(500);
-        await sleep(2000)
-        $("#latihan1Img").fadeOut(10);
-        await sleep(20)
     }
-
     showLatihan1Quiz()
 }
 

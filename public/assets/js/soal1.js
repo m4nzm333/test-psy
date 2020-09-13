@@ -3,7 +3,7 @@ const showSoal1Petunjuk = async () => {
     setProgress('soal1Petunjuk');
     $("#root").html(`<div style="display:none; margin-top:200px" id="petunjukSoal1" >
         <h1 class="text-center my-5">Soal 1</h1>
-        <p class="lead my-5 text-center" style="font-size:20px">Dalam beberapa saat, tayangan gambar dan kata-kata akan dimulai. <strong>INGAT!!</strong> Tayangan ini akan membantu anda dalam mengerjakan soal.</p>
+        <p class="lead my-5 text-center" style="font-size:20px">Dalam beberapa saat lagi, Soal dan Kolom jawaban akan ditayangkan. <strong>INGAT!!</strong> Soal akan dibatasi oleh waktu sehingga kerjakan secepat dan setepat mungkin. Tuliskan Jawaban anda di kolom yang sudah disediakan.</p>
     </div>`);
 
     $("#petunjukSoal1").fadeIn();
@@ -19,19 +19,20 @@ const showSoal1Petunjuk = async () => {
 
 const showSoal1Selesai = async () => {
     setProgress('soal1Selesai');
-    $("#root").html(`<div style="display:none; margin-top:200px" id="selesaiSoal1" >
-        <h4 class="text-center my-5">Tayangan kata-kata dan gambar telah selesai. <br>
-        Beberapa saat lagi, akan muncul soal dan kolom untuk mengerjakan soal
-        </h4>
-    </div>`);
+    if(mode != 3){
+        $("#root").html(`<div style="display:none; margin-top:200px" id="selesaiSoal1" >
+            <h4 class="text-center my-5">Tayangan kata-kata dan gambar telah selesai. <br>
+            Beberapa saat lagi, akan muncul soal dan kolom untuk mengerjakan soal
+            </h4>
+        </div>`);
 
-    $("#selesaiSoal1").fadeIn();
-    for(var i = 10; i >= 0; i--){
-        console.log(i);
-        await sleep(1000);
+        $("#selesaiSoal1").fadeIn();
+        for(var i = 10; i >= 0; i--){
+            console.log(i);
+            await sleep(1000);
+        }
+        $("#selesaiSoal1").fadeOut();
     }
-    $("#selesaiSoal1").fadeOut();
-
     showSoal1Quiz();
 }
 
@@ -100,33 +101,34 @@ const soal1Manifest = [
 
 const showSoal1 = async () => {
     setProgress('soal1Gambar');
-    $("#root").html(
-        `<div class="text-center" id="soal1Root">
-            <h1 id="soal1Title" class="my-5" style="display:none; font-size: 60px; margin-top:150px !important"></h1>
-            <img src="" style="display:none; margin-top:20px !important" alt="Latihan1" id="soal1Img" height="500px">
-        </div>`);
-    
-    for(var i = 0; i < soal1Manifest.length; i++){
-        $("#soal1Title").html(soal1Manifest[i].title);
-        // Mode 0
-        if(mode == 0){
-            $("#soal1Img").attr('src', soal1Manifest[i].url)
-        }
-        // Mode 1
-        if(mode == 1){
-            $("#soal1Img").attr('src', '../../' + soal1Manifest[i].url) 
-        }
+    if(mode != 3){
+        $("#root").html(
+            `<div class="text-center" id="soal1Root">
+                <h1 id="soal1Title" class="my-5" style="display:none; font-size: 60px; margin-top:150px !important"></h1>
+                <img src="" style="display:none; margin-top:20px !important" alt="Latihan1" id="soal1Img" height="500px">
+            </div>`);
         
-        $("#soal1Title").fadeIn(500);
-        await sleep(2000)
-        $("#soal1Title").fadeOut(10);
-        await sleep(20)
-        $("#soal1Img").fadeIn(500);
-        await sleep(2000)
-        $("#soal1Img").fadeOut(10);
-        await sleep(20)
+        for(var i = 0; i < soal1Manifest.length; i++){
+            $("#soal1Title").html(soal1Manifest[i].title);
+            // Mode 0
+            if(mode == 0){
+                $("#soal1Img").attr('src', soal1Manifest[i].url)
+            }
+            // Mode 1
+            if(mode == 1){
+                $("#soal1Img").attr('src', '../../' + soal1Manifest[i].url) 
+            }
+            
+            $("#soal1Title").fadeIn(500);
+            await sleep(2000)
+            $("#soal1Title").fadeOut(10);
+            await sleep(20)
+            $("#soal1Img").fadeIn(500);
+            await sleep(2000)
+            $("#soal1Img").fadeOut(10);
+            await sleep(20)
+        }
     }
-
     showSoal1Selesai()
 }
 

@@ -33,7 +33,7 @@ const showSelamatDatang = async () => {
     if(mode == 0){
         petunjukSoalku = 'Untuk beberapa menit kedepan anda akan mengerjakan dua bentuk tes. Tes pertama bernama Alternated uses test dan tes kedua bernama Remote associates test. Setiap tes telah disediakan petunjuk yang akan membantu anda selama tes berlangsung. Sebelum memulai, silahkan duduk senyaman mungkin dan isilah biodata anda terlebih dahulu.';
     } else {
-        petunjukSoalku = 'Untuk beberapa menit kedepan anda akan mengerjakan sebuah tes. Tes tersebut bernama Alternated uses test dan telah disediakan petunjuk yang akan membantu anda selama tes berlangsung. Sebelum memulai, silahkan duduk senyaman mungkin dan isilah biodata anda terlebih dahulu.';
+        petunjukSoalku = 'Untuk beberapa menit kedepan anda akan mengerjakan sebuah tes yang bernama Alternated Uses Test. Sebelum memulai, Silahkan duduk senyaman mungkin dan isilah biodata anda terlebih dahulu.';
     }
     $("#root").html(`<div id="selamatDatang" style="display:none">
         <p class="lead text-justify my-5"><strong>Selamat Datang!</strong> ${petunjukSoalku}</p>
@@ -95,7 +95,7 @@ const showPetunjukPortal1 = () => {
         <h4 class="text-left my-5">PORTAL 1</h5>
         <h2 class="text-center">PETUNJUK TUGAS ALTERNATE USES TEST</h2>
         <p class="lead text-justify">Pada tes ini, anda disajikan beberapa buah benda dan setiap benda memiliki fungsinya masing-masing. Sebagai contoh: Koran berfungsi untuk dibaca. Namun bukan itu yang kami minta. Anda ditantang untuk memikirkan fungsi lainnya. Sebagai contoh, fungsi lain dari Koran adalah menghidupkan api, membungkus sampah, ataupun sebagai alat pemukul.</p>
-        <p class="lead text-justify">Setiap soal akan dimulai dengan tayangan berupa kata-kata dan gambar secara cepat dan bergantian. Tayangan ini akan membantu anda dalam mengerjakan setiap soal. Jadi mohon untuk diperhatikan secara seksama.</p>
+        <!-- <p class="lead text-justify">Setiap soal akan dimulai dengan tayangan berupa kata-kata dan gambar secara cepat dan bergantian. Tayangan ini akan membantu anda dalam mengerjakan setiap soal. Jadi mohon untuk diperhatikan secara seksama.</p> -->
         <strong class="lead">PENTING ANDA PERHATIKAN:</strong>
         <ul>
             <li>Fungsi yang anda tuliskan tidak boleh sama dengan benda lainnya</li>

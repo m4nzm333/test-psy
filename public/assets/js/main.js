@@ -31,4 +31,4 @@ const clearAllLocalStorage = () => {
     localStorage.removeItem("progress");
 }
 
-var loc = mode == 1 ? '../' : ''
+var loc = mode == 0 ? '' : '../'

@@ -3,7 +3,7 @@ const showSoal3Petunjuk = async () => {
     setProgress('soal3Petunjuk');
     $("#root").html(`<div style="display:none; margin-top:200px" id="petunjukSoal3" >
         <h1 class="text-center my-5">Soal 3</h1>
-        <p class="lead my-5 text-center" style="font-size:20px">Dalam beberapa saat, tayangan gambar dan kata-kata akan dimulai.</p>
+        <p class="lead my-5 text-center" style="font-size:20px">Dalam beberapa saat lagi, Soal dan Kolom jawaban akan ditayangkan. <strong>INGAT!!</strong> Soal akan dibatasi oleh waktu sehingga kerjakan secepat dan setepat mungkin. Tuliskan Jawaban anda di kolom yang sudah disediakan.</p>
     </div>`);
 
     $("#petunjukSoal3").fadeIn();
@@ -19,19 +19,20 @@ const showSoal3Petunjuk = async () => {
 
 const showSoal3Selesai = async () => {
     setProgress('soal3Selesai');
-    $("#root").html(`<div style="display:none; margin-top:200px" id="selesaiSoal3" >
-        <h4 class="text-center my-5">Tayangan kata-kata dan gambar telah selesai. <br>
-        Beberapa saat lagi, akan muncul soal dan kolom untuk mengerjakan soal
-        </h4>
-    </div>`);
+    if(mode != 3){
+        $("#root").html(`<div style="display:none; margin-top:200px" id="selesaiSoal3" >
+            <h4 class="text-center my-5">Tayangan kata-kata dan gambar telah selesai. <br>
+            Beberapa saat lagi, akan muncul soal dan kolom untuk mengerjakan soal
+            </h4>
+        </div>`);
 
-    $("#selesaiSoal3").fadeIn();
-    for(var i = 10; i >= 0; i--){
-        console.log(i);
-        await sleep(1000);
+        $("#selesaiSoal3").fadeIn();
+        for(var i = 10; i >= 0; i--){
+            console.log(i);
+            await sleep(1000);
+        }
+        $("#selesaiSoal3").fadeOut();
     }
-    $("#selesaiSoal3").fadeOut();
-
     showSoal3Quiz();
 }
 
@@ -100,32 +101,33 @@ const soal3Manifest = [
 
 const showSoal3 = async () => {
     setProgress('soal3Gambar');
-    $("#root").html(
-        `<div class="text-center" id="soal3Root">
-            <h1 id="soal3Title" class="my-5" style="display:none; font-size: 60px; margin-top:150px !important"></h1>
-            <img src="" style="display:none; margin-top:20px !important" alt="Soal " id="soal3Img" height="500px">
-        </div>`);
-    
-    for(var i = 0; i < soal3Manifest.length; i++){
-        $("#soal3Title").html(soal3Manifest[i].title);
-        // Mode 0
-        if(mode == 0){
-            $("#soal3Img").attr('src', soal3Manifest[i].url)
+    if(mode != 3){
+        $("#root").html(
+            `<div class="text-center" id="soal3Root">
+                <h1 id="soal3Title" class="my-5" style="display:none; font-size: 60px; margin-top:150px !important"></h1>
+                <img src="" style="display:none; margin-top:20px !important" alt="Soal " id="soal3Img" height="500px">
+            </div>`);
+        
+        for(var i = 0; i < soal3Manifest.length; i++){
+            $("#soal3Title").html(soal3Manifest[i].title);
+            // Mode 0
+            if(mode == 0){
+                $("#soal3Img").attr('src', soal3Manifest[i].url)
+            }
+            // Mode 1
+            if(mode == 1){
+                $("#soal3Img").attr('src', '../' + soal3Manifest[i].url) 
+            }
+            $("#soal3Title").fadeIn(500);
+            await sleep(2000)
+            $("#soal3Title").fadeOut(10);
+            await sleep(20)
+            $("#soal3Img").fadeIn(500);
+            await sleep(2000)
+            $("#soal3Img").fadeOut(10);
+            await sleep(20)
         }
-        // Mode 1
-        if(mode == 1){
-            $("#soal3Img").attr('src', '../' + soal3Manifest[i].url) 
-        }
-        $("#soal3Title").fadeIn(500);
-        await sleep(2000)
-        $("#soal3Title").fadeOut(10);
-        await sleep(20)
-        $("#soal3Img").fadeIn(500);
-        await sleep(2000)
-        $("#soal3Img").fadeOut(10);
-        await sleep(20)
     }
-
     showSoal3Selesai();
 }
 
